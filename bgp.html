@@ -1,0 +1,67 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>TTM4240 Lab Wiki</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" type="text/css" href="styles.css" />
+</head>
+<body>
+<div id="container">
+  <div id="header">
+    <h1><a href="https://surnes.github.io/surnes/">TTM4240 Lab Wiki</a></h1>
+  </div>
+  <div id="wrapper">
+    <div id="content">
+      <p><strong>Border Gateway Protocol</strong></p>
+      <p>Border Gateway Protocol (BGP) is an EGP standardized path-vector routing protocol that guarantees scalability, flexibility, and network stability. It was established by the Internet Engineering Task Force (IETF) and is known as the primary routing protocol for service provider networks and the internet. BGP was initially designed to provide internet connectivity information, but has expanded its ability to support multicast, IPv6, and VPN routes, among other forms of data.</p>
+      <p>The Neighbor Command</p>
+      <p><ul>
+        <li>The peering between routers works differently for BGP than IGPs.</li>
+        <li>BGP routers located in the same AS may not be physically connected to each other directly, and could be separated by several intermediary hops.</li>
+        <li>Using link-local multicast Hello messages to form adjacencies is not possible, as they are not forwarded to another interface.</li>
+        <li>To establish BGP peering, it is necessary to specify the neighbor manually. This is done by including a neighbor statement in the configuration and providing the IP address of the peer router.</li>
+      </ul></p>
+      <p>How BGP works</p>
+      <p><ul>
+        <li>The administrator configures BGP and specifies the neighbor IP address.</li>
+        <li>In order for a router to send BGP packets to the destination router, there must be a route to the neighbor IP address in the router's routing table. Otherwise, the router will not know how to reach the destination.</li>
+      </ul><p/>
+      <p>iBGP Neighbors</p>  
+      <p><ul>
+        <li>If the BGP session is established using the IP address of a physical interface, and that interface becomes unavailable, the BGP session will be disrupted, even if there are alternative paths available to reach the router.</li>
+        <li>Loopback addresses, usually advertised within the IGP, are commonly used as the address in the neighbor statement for BGP peers. This allows the BGP peers to maintain connectivity with each other even if a physical interface fails.</li>
+      <ul/></p>
+      <p>BGP Router Advertisement Rules</p>
+      <p><ul>
+        <li>BGP gives more importance to advertising routes that it is actively using.</li>
+        <li>BGP advertises routes it has learned from an external BGP peer with all of its BGP peers, whether they are external or internal to its own network.</li>
+        <li>Once BGP has successfully connected with a new peer, BGP advertises all the routes matching the above criteria to the peer. Then, BGP only shares updates related to changes or additions to those routes with the peer.</li>
+      </ul></p>
+  </div>
+  </div>
+  <div id="navigation">
+    <p><strong>Navigation Here</strong></p>
+    <ul>
+      <li><a href="https://surnes.github.io/surnes/setup.html">Setup</a></li>
+      <li><a href="https://surnes.github.io/surnes/gns3.html">Gns3</a></li>
+      <li><a href="https://surnes.github.io/surnes/basic.html">- Basic Commands</a></li>
+      <li><a href="https://surnes.github.io/surnes/topology.html">- Creating Your Topology</a></li>
+      <li><a href="https://surnes.github.io/surnes/routers.html">Router OS</a></li>
+      <li><a href="https://surnes.github.io/surnes/Cisco.html">- Cisco</a></li>
+      <li><a href="https://surnes.github.io/surnes/ffr.html">- FFR</a></li>
+      <li><a href="https://surnes.github.io/surnes/vyos.html">- VyOs</a></li>
+      <li><a href="https://surnes.github.io/surnes/proto.html">Routing Protocols</a></li>
+      <li><a href="https://surnes.github.io/surnes/bgp.html">- BGPs</a></li>
+      <li><a href="https://surnes.github.io/surnes/ospf.html">- OSPF</a></li>
+    </ul>
+  </div>
+  <div id="extra">
+    <p><strong>More stuff here.</strong></p>
+    <p>sit malesuada lacus pellus parturpiscing. Pellenterdumat maecenatoque cras a magna nibh et quis diam ames et. Laoremvolutpat ac dolor eget eget temper lacus vestibus velit lacus venean. Magnaipsum tellus morbi leo aliquat nulla convallis pellentesque.</p>
+  </div>
+  <div id="footer">
+    <p>Footer</p>
+  </div>
+</div>
+</body>
+</html>
